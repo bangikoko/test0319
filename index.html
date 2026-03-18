@@ -3,16 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>航空管制专业知识考试 - 85题完整题目</title>
+    <title>OpenClaw文档与航空考试题目</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -20,408 +12,491 @@
         }
         
         body {
-            font-family: 'Microsoft YaHei', 'Segoe UI', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: #f5f5f5;
             padding: 20px;
-        }
-        
-        .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            overflow: hidden;
         }
         
         header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 30px;
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
         
         .subtitle {
-            font-size: 1.2em;
+            font-size: 1.2rem;
             opacity: 0.9;
+            margin-bottom: 1.5rem;
         }
         
-        .exam-info {
-            padding: 25px;
-            background: var(--light-color);
-            border-bottom: 2px solid var(--secondary-color);
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .info-item {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .warning {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin-top: 20px;
+        .meta {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
             border-radius: 5px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
         }
         
-        .questions-container {
-            padding: 30px;
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #667eea;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        h3 {
+            color: #764ba2;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.4rem;
+        }
+        
+        h4 {
+            color: #555;
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .code-block {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: 'Consolas', 'Monaco', monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
         }
         
         .question {
-            background: white;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .question:hover {
-            border-color: var(--secondary-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
         }
         
         .question-number {
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            background: var(--secondary-color);
+            display: inline-block;
+            background-color: #667eea;
             color: white;
-            width: 40px;
-            height: 40px;
-            line-height: 40px;
-            text-align: center;
-            border-radius: 50%;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
             font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            margin-bottom: 1rem;
         }
         
-        .question-text {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin: 20px 0 15px 0;
-            color: var(--dark-color);
-            padding-left: 10px;
+        .ocr-text {
+            background-color: #fff8e1;
+            border: 1px solid #ffd54f;
+            padding: 1rem;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-size: 0.9rem;
         }
         
-        .options {
-            margin: 20px 0;
-            padding-left: 20px;
+        .translation-pair {
+            background-color: #e8f5e9;
+            border: 1px solid #81c784;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
         }
         
-        .option {
-            margin: 10px 0;
-            padding: 12px;
-            background: #f8f9fa;
-            border-radius: 6px;
-            border-left: 4px solid #ddd;
-            transition: all 0.2s;
-        }
-        
-        .option:hover {
-            background: #e9ecef;
-            transform: translateX(5px);
-        }
-        
-        .option.correct {
-            background: #d4edda;
-            border-left-color: #28a745;
-            color: #155724;
-        }
-        
-        .answer {
-            background: #d4edda;
-            padding: 18px;
-            border-radius: 8px;
-            margin-top: 20px;
-            border-left: 5px solid #28a745;
+        .english {
+            color: #1976d2;
             font-weight: bold;
         }
         
-        .explanation {
-            background: #fff3cd;
-            padding: 18px;
-            border-radius: 8px;
-            margin-top: 15px;
-            border-left: 5px solid #ffc107;
+        .chinese {
+            color: #388e3c;
+            font-weight: bold;
+        }
+        
+        .note {
+            background-color: #e3f2fd;
+            border: 1px solid #64b5f6;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .tip {
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+        
+        .warning {
+            background-color: #ffebee;
+            border: 1px solid #ef5350;
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
         }
         
         footer {
             text-align: center;
-            padding: 25px;
-            background: var(--primary-color);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #667eea;
             color: white;
-            border-top: 5px solid var(--secondary-color);
-        }
-        
-        .footer-links {
-            margin-top: 15px;
-        }
-        
-        .footer-links a {
-            color: var(--light-color);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
             text-decoration: none;
-            margin: 0 10px;
-            transition: color 0.3s;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: background-color 0.3s;
         }
         
-        .footer-links a:hover {
-            color: var(--secondary-color);
+        .download-btn:hover {
+            background-color: #5a67d8;
         }
         
         @media (max-width: 768px) {
-            .container {
-                border-radius: 10px;
+            body {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 2rem 1rem;
             }
             
             h1 {
-                font-size: 1.8em;
+                font-size: 2rem;
             }
             
-            .question {
-                padding: 20px 15px;
+            .section {
+                padding: 1.5rem;
             }
-            
-            .question-number {
-                width: 35px;
-                height: 35px;
-                line-height: 35px;
-                font-size: 1em;
-            }
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>📚 OpenClaw文档与航空考试题目</h1>
+        <div class="subtitle">一站式学习资源与考试资料</div>
+        <div class="meta">
+            最后更新: 2026年3月18日 | 内容来源: OpenClaw AI助手处理结果
+        </div>
+    </header>
+    
     <div class="container">
-        <header>
-            <h1>✈️ 航空管制专业知识考试</h1>
-            <p class="subtitle">85题完整题目及答案 - 在线学习平台</p>
-        </header>
+        <!-- 第一部分: OpenClaw新手指南 -->
+        <section class="section" id="openclaw-guide">
+            <h2>🚀 OpenClaw 使用场景新手指南</h2>
+            
+            <div class="highlight">
+                <p>OpenClaw 是一个<strong>多通道 AI 网关平台</strong>，让你可以通过飞书、微信、Telegram、Discord 等多种聊天工具与 AI 助手交互。</p>
+            </div>
+            
+            <h3>核心特点</h3>
+            <ul>
+                <li>🗣️ <strong>多通道接入</strong>：在常用聊天工具中直接使用</li>
+                <li>🛠️ <strong>工具与技能</strong>：内置丰富工具，可扩展技能</li>
+                <li>🧠 <strong>记忆系统</strong>：记录对话历史和重要信息</li>
+                <li>🔧 <strong>自动化</strong>：定时任务、文件处理、代码执行等</li>
+                <li>📁 <strong>工作空间</strong>：独立的文件管理环境</li>
+            </ul>
+            
+            <h3>主要使用场景</h3>
+            
+            <h4>日常助手</h4>
+            <ul>
+                <li><strong>问答咨询</strong>：回答技术问题、生活建议、学习指导</li>
+                <li><strong>信息查询</strong>：天气、新闻、汇率等实时信息</li>
+                <li><strong>翻译助手</strong>：多语言即时翻译</li>
+                <li><strong>计算工具</strong>：数学计算、单位换算</li>
+            </ul>
+            
+            <h4>文件与文档处理</h4>
+            <ul>
+                <li><strong>文档创建</strong>：自动生成报告、总结、文档</li>
+                <li><strong>文件操作</strong>：读取、编辑、整理本地文件</li>
+                <li><strong>格式转换</strong>：Markdown、PDF、图片等格式处理</li>
+                <li><strong>飞书文档</strong>：直接创建、编辑飞书文档</li>
+            </ul>
+            
+            <h4>编程与开发</h4>
+            <ul>
+                <li><strong>代码编写</strong>：生成、调试、解释代码片段</li>
+                <li><strong>脚本执行</strong>：运行 Shell 命令、Python 脚本</li>
+                <li><strong>项目分析</strong>：查看项目结构、分析代码</li>
+                <li><strong>Git 操作</strong>：提交、推送、分支管理等</li>
+            </ul>
+            
+            <h3>常用命令示例</h3>
+            
+            <div class="code-block">
+# 读取文件
+读取 /path/to/file.md
+
+# 编辑文件
+编辑文件，将某行内容改为...
+
+# 执行命令
+运行 ls -la
+            </div>
+            
+            <div class="tip">
+                <strong>💡 提示：</strong> OpenClaw 是一个强大的 AI 助手平台，越用越顺手。从简单任务开始，逐步探索高级功能。
+            </div>
+            
+            <a href="#top" class="download-btn">返回顶部</a>
+        </section>
         
-        <section class="exam-info">
-            <h2>📋 考试信息</h2>
-            <div class="info-grid">
-                <div class="info-item">
-                    <strong>考试类型：</strong><br>航空管制员专业知识考试
-                </div>
-                <div class="info-item">
-                    <strong>题目总数：</strong><br>85题
-                </div>
-                <div class="info-item">
-                    <strong>题目格式：</strong><br>单选题
-                </div>
-                <div class="info-item">
-                    <strong>每题分值：</strong><br>1分
-                </div>
-                <div class="info-item">
-                    <strong>总分：</strong><br>85分
-                </div>
-                <div class="info-item">
-                    <strong>合格标准：</strong><br>通常为80分以上
-                </div>
+        <!-- 第二部分: 航空考试85道题 -->
+        <section class="section" id="aviation-exam">
+            <h2>✈️ 航空考试85道题（部分提取）</h2>
+            
+            <div class="note">
+                <p><strong>说明：</strong> 从29秒视频中提取的题目，由于视频切换速度过快（每道题仅显示0.34秒），目前提取到部分题目。</p>
+                <p><strong>提取统计：</strong> 视频时长: 29.28秒 | 总题目数: 85道 | 成功提取: 11道 (12.9%)</p>
             </div>
             
             <div class="warning">
-                <strong>⚠️ 重要说明：</strong>
-                <ul style="margin-top: 10px; padding-left: 20px;">
-                    <li>以下题目基于视频内容识别和航空管制专业知识补充</li>
-                    <li>答案基于航空管制标准、规章和最佳实践</li>
-                    <li>建议对照原视频和官方资料进行最终验证</li>
-                    <li>实际工作中请以现行有效规章为准</li>
+                <p><strong>⚠️ 注意：</strong> 以下题目因OCR识别限制，部分文字可能存在误差，建议人工核对。</p>
+            </div>
+            
+            <h3>已提取题目详情</h3>
+            
+            <!-- 第1题 -->
+            <div class="question">
+                <div class="question-number">第1题</div>
+                <p><strong>题目：</strong> 紧急油量处置时，管制席提供优先管制服务不包括（1分）</p>
+                <p><strong>选项：</strong></p>
+                <ul>
+                    <li>A) 缩短航程</li>
+                    <li>B) 提供有利高度</li>
+                    <li>C) 组织其他航空器避让</li>
+                    <li>D) 安排地面加油</li>
                 </ul>
             </div>
-        </section>
-        
-        <section class="questions-container">
-            <h2 style="color: var(--primary-color); margin-bottom: 25px; border-bottom: 2px solid var(--secondary-color); padding-bottom: 10px;">📝 题目列表</h2>
             
-            <div id="questions-list">
-                <div class="loading">
-                    <p>正在加载题目...</p>
-                    <p>如果题目没有显示，请刷新页面</p>
-                </div>
+            <!-- 第12题 -->
+            <div class="question">
+                <div class="question-number">第12题</div>
+                <p><strong>题目：</strong> 紧急油量处置协调席，首要操作是（1分）</p>
+                <p><strong>选项：</strong></p>
+                <ul>
+                    <li>A) 报告带班主任</li>
+                    <li>B) 通知相关管制单位</li>
+                    <li>C) 协助空域申请</li>
+                    <li>D) 提供机场情报</li>
+                </ul>
             </div>
+            
+            <!-- 第16题 -->
+            <div class="question">
+                <div class="question-number">第16题</div>
+                <p><strong>题目：</strong> 中度结冰若不能保持高度，可参照何种处置检查单执行（1分）</p>
+                <p><strong>选项：</strong></p>
+                <ul>
+                    <li>A) 最低油量</li>
+                    <li>B) 紧急油量</li>
+                    <li>C) 严重颠簸</li>
+                    <li>D) 严重积冰</li>
+                </ul>
+            </div>
+            
+            <!-- 第17题 -->
+            <div class="question">
+                <div class="question-number">第17题</div>
+                <p><strong>题目：</strong> "Level change" 在航空管制中的含义是（1分）</p>
+                <p><strong>选项：</strong></p>
+                <ul>
+                    <li>A) 改变航向</li>
+                    <li>B) 变更高度</li>
+                    <li>C) 调整速度</li>
+                    <li>D) 航线偏航</li>
+                </ul>
+            </div>
+            
+            <!-- 第20题 -->
+            <div class="question">
+                <div class="question-number">第20题</div>
+                <p><strong>题目：</strong> 严重积冰可能导致的问题不包括（1分）</p>
+                <p><strong>选项：</strong></p>
+                <ul>
+                    <li>A) 舵面卡阻</li>
+                    <li>B) 发动机进气受阻</li>
+                    <li>C) 空速管堵塞</li>
+                    <li>D) 燃油系统故障</li>
+                </ul>
+            </div>
+            
+            <div class="note">
+                <p><strong>更多题目：</strong> 文档中包含第21、30、31、34、46题等共11道题目。完整列表请查看原始文档。</p>
+            </div>
+            
+            <a href="#top" class="download-btn">返回顶部</a>
         </section>
         
-        <footer>
-            <p>© 2026 航空管制考试在线平台</p>
-            <p>文档创建时间：2026年3月18日</p>
-            <p>题目来源：视频识别 + 专业知识补充 | 答案依据：航空管制标准 + 最佳实践</p>
-            <div class="footer-links">
-                <strong>重要提示：</strong>本资料仅供参考学习使用，实际工作中请以现行有效规章为准
+        <!-- 第三部分: 英汉互译题 -->
+        <section class="section" id="translation-exam">
+            <h2>🌐 英汉互译题（图片识别结果）</h2>
+            
+            <div class="meta">
+                <p><strong>识别信息：</strong> 2026年第一季度考试(A卷) | 识别工具: Tesseract OCR | 准确率: 约70-80%</p>
             </div>
-        </footer>
+            
+            <h3>原始OCR识别结果</h3>
+            <div class="ocr-text">
+ 年第一季度考试 CAH)
+室
+一一
+3109, moderate to severe icing in vicinity of Baiyun Airport.
+二 ©SN3109, a Boeing Seven tree seven, previously reported wind shear, loss of Two
+Five knots at Four Hundred feet.
+===
+a
+Guangzhou Control, CSN3109, picking up heavy rime ice at 6600 meters.
+-————__€$N3109, Guangzhou Control, reported weather area with tops at 11,000 meters 40
+kilometers either side of A461, between BEKOL and YIN.
+CCA636S, wind at 6000 meters 350 degrees 73 kilometers per hour, sais
+——          turbulence reported by a Boeing 737.
+0 AtehaE 2 点外方向、15 海里处存在强降水区， 该区域直径 25 海里。
+Ara GF heavy precipitation between ten o clock and two.’ clock,
+one five miles. Area is two five miles in diameter.  exe
+=                          =       <    方向     入      在|     50
+东方504，广州，气象雷达显示 10 点至 1 点方向、45 公里处存
+Géh¥aeEast 504, Guangzhou Control, weather radar indicated area of
+precipitation from 10 0’ clock to 1 0 clock, 45 kilometers, intensity
+unknown.”                                  tiie «
+东方504，同意偏航至 RATS 航路东侧，准备回原了航路时报告
+China East 504, deviation east of R473 approved, advise when ready to
+return On-course.                                             Re        1
+Pyar:     ii        gus LAMPE
+My, HI 504» iE 10100, 因天气需要偏航。ZHO 定他
+2新秀，请求改变高度   航。                             Aon
+fk  ; pen he cor EERE East 504, 10100 meters, weather deviation
+5 Mins mee utence at present level over ZHO, require level change
+i  aaa                         =               ew, Wa
+东方 不同意偏航， 航路两侧均有冲突， 注意观察，
+整高度。       局
+te                igzhou Control,
+TS        standby for leve
+            </div>
+            
+            <h3>清理后翻译题目</h3>
+            
+            <!-- 第1题 -->
+            <div class="translation-pair">
+                <div class="question-number">第1题</div>
+                <p class="english">英文: CSN3109, moderate to severe icing in vicinity of Baiyun Airport.</p>
+                <p class="chinese">中文: （待补充）</p>
+            </div>
+            
+            <!-- 第2题 -->
+            <div class="translation-pair">
+                <div class="question-number">第2题</div>
+                <p class="english">英文: CSN3109, a Boeing Seven tree seven, previously reported wind shear, loss of Two Five knots at Four Hundred feet.</p>
+                <p class="chinese">中文: （待补充）</p>
+            </div>
+            
+            <!-- 第3题 -->
+            <div class="translation-pair">
+                <div class="question-number">第3题</div>
+                <p class="english">英文: Guangzhou Control, CSN3109, picking up heavy rime ice at 6600 meters.</p>
+                <p class="chinese">中文: （待补充）</p>
+            </div>
+            
+            <!-- 第6题 -->
+            <div class="translation-pair">
+                <div class="question-number">第6题</div>
+                <p class="english">英文: Heavy precipitation between ten o'clock and two o'clock, one five miles. Area is two five miles in diameter.</p>
+                <p class="chinese">中文: 2点钟方向、15海里处存在强降水区，该区域直径25海里。</p>
+            </div>
+            
+            <!-- 第7题 -->
+            <div class="translation-pair">
+                <div class="question-number">第7题</div>
+                <p class="english">英文: East 504, Guangzhou Control, weather radar indicated area of precipitation from 10 o'clock to 1 o'clock, 45 kilometers, intensity unknown.</p>
+                <p class="chinese">中文: 东方504，广州，气象雷达显示10点至1点方向、45公里处存在降水区，强度未知。</p>
+            </div>
+            
+            <div class="tip">
+                <p><strong>📝 文本分析：</strong> 内容涉及航空管制通话，包括天气报告、飞行状态、专业术语（结冰、风切变、颠簸、偏航等）和单位换算。</p>
+            </div>
+            
+            <h3>改进建议</h3>
+            <ul>
+                <li>提供更高清图片，确保文字清晰无模糊</li>
+                <li>多角度拍摄，避免反光或阴影</li>
+                <li>分区域识别，将图片分割为多个小区域分别识别</li>
+                <li>对关键术语进行人工修正</li>
+            </ul>
+            
+            <a href="#top" class="download-btn">返回顶部</a>
+        </section>
     </div>
-
-    <script>
-        // 题目数据 - 这里只包含5个示例题目
-        const questions = [
-            {
-                number: 1,
-                question: "紧急油量处置时，管制席提供优先管制服务不包括 (1分)",
-                options: [
-                    "A. 缩短航程",
-                    "B. 提供有利高度", 
-                    "C. 组织其他航空器避让",
-                    "D. 优先安排着陆"
-                ],
-                answer: "A",
-                explanation: "缩短航程不是管制席的直接服务内容"
-            },
-            {
-                number: 2,
-                question: "航空器紧急情况处置中，了解的机上信息不包括 (1分)",
-                options: [
-                    "A. 机上人数",
-                    "B. 剩余燃油量",
-                    "C. 机载危险品性质",
-                    "D. 旅客行李数量"
-                ],
-                answer: "D",
-                explanation: "行李数量不是紧急处置的核心信息"
-            },
-            {
-                number: 3,
-                question: "最低油量处置管制席，了解航空器的何种信息是核心操作之一 (1分)",
-                options: [
-                    "A. 续航时间",
-                    "B. 积冰情况",
-                    "C. 燃油量",
-                    "D. 机载危险品"
-                ],
-                answer: "C",
-                explanation: "最低油量处置核心是燃油信息"
-            },
-            {
-                number: 4,
-                question: "最低油量处置时，需要协调的单位不包括 (1分)",
-                options: [
-                    "A. 所有航空器",
-                    "B. 可能受影响的其他航空器",
-                    "C. 机场塔台",
-                    "D. 气象服务机构"
-                ],
-                answer: "A",
-                explanation: "不需要协调所有航空器"
-            },
-            {
-                number: 5,
-                question: "紧急情况处置时，管制席的基础操作是 (1分)",
-                options: [
-                    "A. 了解续航时间",
-                    "B. 证实是否宣布\"PANPAN\"或\"MAYDAY\"",
-                    "C. 提供优先管制服务",
-                    "D. 证实驾驶员意图"
-                ],
-                answer: "B",
-                explanation: "首先需要确认紧急情况等级"
-            }
-        ];
-
-        // 动态生成题目
-        function renderQuestions() {
-            const container = document.getElementById('questions-list');
-            container.innerHTML = '';
-            
-            if (questions.length === 0) {
-                container.innerHTML = '<div class="loading"><p>暂无题目数据</p></div>';
-                return;
-            }
-            
-            questions.forEach(q => {
-                const questionDiv = document.createElement('div');
-                questionDiv.className = 'question';
-                
-                let optionsHtml = '';
-                q.options.forEach(option => {
-                    const optionLetter = option.charAt(0);
-                    const isCorrect = optionLetter === q.answer;
-                    const optionClass = isCorrect ? 'option correct' : 'option';
-                    optionsHtml += `<div class="${optionClass}">${option}</div>`;
-                });
-                
-                questionDiv.innerHTML = `
-                    <div class="question-number">${q.number}</div>
-                    <div class="question-text">${q.question}</div>
-                    <div class="options">${optionsHtml}</div>
-                    <div class="answer">
-                        <strong>✅ 参考答案：${q.answer}</strong>
-                    </div>
-                    <div class="explanation">
-                        <strong>📝 解析：</strong>${q.explanation}
-                    </div>
-                `;
-                
-                container.appendChild(questionDiv);
-            });
-            
-            // 添加更多题目提示
-            if (questions.length < 85) {
-                const moreDiv = document.createElement('div');
-                moreDiv.className = 'question';
-                moreDiv.style.textAlign = 'center';
-                moreDiv.style.padding = '30px';
-                moreDiv.innerHTML = `
-                    <h3>更多题目正在整理中...</h3>
-                    <p>完整85题正在陆续更新，请关注后续版本</p>
-                    <p style="margin-top: 15px; color: #666;">已显示 ${questions.length}/85 题</p>
-                `;
-                container.appendChild(moreDiv);
-            }
-        }
-
-        // 页面加载完成后渲染题目
-        document.addEventListener('DOMContentLoaded', renderQuestions);
-        
-        // 添加简单的交互效果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 为选项添加点击效果
-            document.addEventListener('click', function(e) {
-                if (e.target.classList.contains('option')) {
-                    e.target.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        e.target.style.transform = '';
-                    }, 200);
-                }
-            });
-            
-            // 显示加载完成
-            setTimeout(() => {
-                const loading = document.querySelector('.loading');
-                if (loading) {
-                    loading.innerHTML = '<p>✅ 题目加载完成！</p>';
-                }
-            }, 1000);
-        });
-    </script>
+    
+    <footer>
+        <p>© 2026 OpenClaw AI助手 | 本页面内容由AI自动生成</p>
+        <p>免责声明: 本页面内容仅供参考，重要内容建议人工核对</p>
+        <p>最后更新时间: 2026年3月18日</p>
+        <p style="margin-top: 1rem;">
+            <a href="#openclaw-guide" style="margin-right: 1rem;">OpenClaw指南</a>
+            <a href="#aviation-exam" style="margin-right: 1rem;">航空考试</a>
+            <a href="#translation-exam">英汉互译</a>
+        </p>
+    </footer>
 </body>
 </html>
