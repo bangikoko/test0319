@@ -5,25 +5,58 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# 设置GITHUB_TOKEN的权限
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
+# 只允许一个并发部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
+  # 构建和部署作业
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取所有历史记录
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        
+        with:
+          # 启用自动生成配置
+          static_site_generator: generic
+      
+      - name: Build with Jekyll (如果不需要可以跳过)
+        run: |
+          echo "这是一个静态网站，无需构建"
+          # 如果需要构建，可以在这里添加命令
+          # 例如: npm install && npm run build
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # 上传整个仓库根目录
           path: '.'
-          
+      
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Deployment Status
+        run: |
+          echo "🎉 部署完成！"
+          echo "网站地址: https://bangikoko.github.io/test0319/"
+          echo "部署ID: ${{ steps.deployment.outputs.deployment_id }}"
